@@ -213,9 +213,7 @@ clickhouse-01              : ok=9    changed=0    unreachable=0    failed=0    s
 
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
----
-
-Ответ: [08-ansible-02-playbook](https://github.com/Hovard777/mnt-homeworks/blob/9092965f8769413856c9de6839faefb386fd8abf/08-ansible-02-playbook/answers.md)
+Ответ: [08-ansible-02-playbook]()
 
 ### Как оформить решение задания
 
