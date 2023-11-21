@@ -1,0 +1,35 @@
+---
+clickhouse_version: "22.3.3.44"
+clickhouse_packages:
+  - clickhouse-client
+  - clickhouse-server
+  - clickhouse-common-static
+clickhouse_users_custom:
+  clicuser:
+    password: paswd123
+    networks:
+      - 192.168.56.10
+# Path to vector configs
+vector_config_dir: "{{ ansible_user_dir }}/vector_config"
+vector_config:
+  sources:
+    sample_file:
+      type: file
+      read_from: beginning
+      ignore_older_secs: 600
+      include:
+        - /home/blekh/logs/*.log
+  sinks:
+    to_clickhouse:
+      type: clickhouse
+      inputs:
+        -  sample-file
+      endpoint: http://192.168.56.10:8123
+      databases: logs
+      auth:
+        password: clicuser
+        user: paswd123
+      skip_unknown_fields: true
+      compression: gzip
+
+
