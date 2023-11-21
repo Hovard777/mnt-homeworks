@@ -15,34 +15,16 @@ Playbook устанавливает сервисы **clickhouse** и **vector**.
 - clickhouse-client
 
 После этого создаётся БД **logs**.
-Ввиду того, что доступ к СУБД появляется не сразу после запуска сервиса **clickhouse-server**,
-попытки создания БД выполняются в цикле, пока не увенчаются успехом.
 
-В заключение в БД **logs** создаётся таблица **logs**, с полями, которые позволяют загружать туда
-записи из **syslog**-а:
-```
-CREATE TABLE IF NOT EXISTS logs.logs (
-    apname String,
-    facility String,
-    hostname String,
-    message String,
-    msgid String,
-    procid Int,
-    severity String,
-    timestamp String,
-    version Int
-) ENGINE = MergeTree ORDER BY timestamp;'
-```
 
 Для установки сервиса **vector** с сайта разработчика устанавливаются пакеты:
 - vector
 
-Затем из шаблона создаётся конфигурационный файл `/etc/vector/vector.toml`,
-который содержит набор команд для загрузки данных из **syslog** в БД **clickhouse**.
+После, из шаблона создаётся конфигурационный файл `{{vector_config_dir}}/vector.toml` и настраивается сервис.
 
 Playbook использует следующие переменные:
 
 - **clickhouse_version** - требуемая версия **clickhouse**
-- **vector_version** - требуемая версия **vector**
+- **vector_config_dir** - путь до конфигурационного файла **vector**
 
 
