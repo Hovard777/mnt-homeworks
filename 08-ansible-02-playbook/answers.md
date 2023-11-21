@@ -215,7 +215,7 @@ clickhouse-01              : ok=9    changed=0    unreachable=0    failed=0    s
 
 ---
 
-Ответ: [08-ansible-02-playbook]()
+Ответ: [08-ansible-02-playbook](https://github.com/Hovard777/mnt-homeworks/blob/9092965f8769413856c9de6839faefb386fd8abf/08-ansible-02-playbook/answers.md)
 
 ### Как оформить решение задания
 
