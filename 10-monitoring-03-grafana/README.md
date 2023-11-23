@@ -3,7 +3,7 @@
 
 #### Задание 1 - скриншот веб-интерфейса grafana со списком подключенных Datasource.
 
-![Снимок экрана от 2023-11-23 09-44-43.png](..%2F..%2F..%2FPictures%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202023-11-23%2009-44-43.png)
+![img1.png](img1.png)
 
 #### Задание 2 - Dashboard
 
@@ -20,11 +20,12 @@ avg(node_memory_MemAvailable_bytes{instance="nodeexporter:9100", job="nodeexport
 > node_filesystem_free_bytes{fstype="ext4",instance="nodeexporter:9100",job="nodeexporter"}  
 node_filesystem_size_bytes{fstype="ext4",instance="nodeexporter:9100",job="nodeexporter"}  
 
-![Снимок экрана от 2023-11-23 10-22-47.png](..%2F..%2F..%2FPictures%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202023-11-23%2010-22-47.png)
+![img2.png](img2.png)
 
 
 #### Задание 3 - Alerts
-![Снимок экрана от 2023-11-23 12-37-29.png](..%2F..%2F..%2FPictures%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202023-11-23%2012-37-29.png)
+
+![img3.png](img3.png)
 
 #### Задание 4
 <details>
