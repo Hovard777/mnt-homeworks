@@ -188,6 +188,7 @@ vector-01                  : ok=5    changed=0    unreachable=0    failed=0    s
 ```
 
 #### README.md-файл по своему playbook.
-
+[README.md](README.md)
 
 #### Готовый playbook 
+[site.yml](playbook%2Fsite.yml)
