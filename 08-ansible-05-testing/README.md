@@ -16,7 +16,37 @@
 ### Molecule
 
 1. Запустите  `molecule test -s centos_7` внутри корневой директории clickhouse-role, посмотрите на вывод команды. Данная команда может отработать с ошибками, это нормально. Наша цель - посмотреть как другие в реальном мире используют молекулу.
+```json
+
+```
 2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`.
+```yaml
+molecule init scenario --driver-name docker
+INFO     Initializing new scenario default...
+
+PLAY [Create a new molecule scenario] ******************************************
+
+TASK [Check if destination folder exists] **************************************
+changed: [localhost]
+
+TASK [Check if destination folder is empty] ************************************
+ok: [localhost]
+
+TASK [Fail if destination folder is not empty] *********************************
+skipping: [localhost]
+
+TASK [Expand templates] ********************************************************
+changed: [localhost] => (item=molecule/default/converge.yml)
+changed: [localhost] => (item=molecule/default/destroy.yml)
+changed: [localhost] => (item=molecule/default/create.yml)
+changed: [localhost] => (item=molecule/default/molecule.yml)
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Initialized scenario in /home/ifebres/netology/mnt-homeworks/08-ansible-05-testing/playbook/roles/vector/molecule/default successfully.
+
+```
 3. Добавьте несколько разных дистрибутивов (centos:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.). 
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
