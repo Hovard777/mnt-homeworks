@@ -1,23 +1,3 @@
 ---
-# vars file for vector-role
-vector_config_dir: "{{ ansible_user_dir }}/vector_config"
-vector_config:
-  sources:
-    sample_file:
-      type: file
-      read_from: beginning
-      ignore_older_secs: 600
-      include:
-        - /home/blekh/logs/*.log
-  sinks:
-    to_clickhouse:
-      type: clickhouse
-      inputs:
-        -  sample-file
-      endpoint: http://10.128.0.10:8123
-      databases: logs
-      auth:
-        password: clicuser
-        user: paswd123
-      skip_unknown_fields: true
-      compression: gzip
+vector_amd64_packages:
+  - vector

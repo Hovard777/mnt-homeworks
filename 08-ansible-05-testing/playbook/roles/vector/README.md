@@ -1,6 +1,6 @@
-# vector-role for Centos 7
+# vector-role
 ============================
-Роль устанавливает vector на CentOS 7.
+Роль устанавливает vector 
 
 ## Example playbook
 ```yaml
