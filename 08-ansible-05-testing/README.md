@@ -5,7 +5,7 @@
 ### Molecule
 
 Вывод команды **molecule test**:
-```
+```yaml
 $ molecule test
 WARNING  The scenario config file ('/home/ifebres/netology/mnt-homeworks/vector-role/molecule/default/molecule.yml') has been modified since the scenario was created. If recent changes are important, reset the scenario with 'molecule destroy' to clean up created items or 'molecule reset' to clear current configuration.
 WARNING  Driver docker does not provide a schema.
@@ -201,7 +201,7 @@ INFO     Pruning extra files from scenario ephemeral directory
 5. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.).
 
 Вывод команды **molecule verify**:
-```
+```yaml
 $ molecule verify
 WARNING  Driver docker does not provide a schema.
 INFO     default scenario test matrix: verify
@@ -255,7 +255,7 @@ INFO     Verifier completed successfully.
 ```
 
 7. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
-```
+```yaml
 $ molecule test
 WARNING  Driver docker does not provide a schema.
 INFO     default scenario test matrix: dependency, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
@@ -478,7 +478,7 @@ INFO     Pruning extra files from scenario ephemeral directory
 1. Добавьте в директорию с vector-role файлы из [директории](./example).
 2. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
 3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
-```
+```yaml
 $ docker run --privileged=True -v `pwd`:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
 [root@16faf128e37f vector-role]# tox
 py37-ansible210 create: /opt/vector-role/.tox/py37-ansible210
@@ -519,7 +519,7 @@ ERROR:   py39-ansible30: commands failed
 
 5. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
 
-```
+```yaml
 ---
 dependency:
   name: galaxy
@@ -548,7 +548,7 @@ scenario:
 ```
 7. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
 
-```
+```yaml
 [tox]
 minversion = 1.8
 basepython = python3.6
@@ -565,7 +565,7 @@ commands =
     {posargs:molecule test -s podman --destroy always}
 ```
 9. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
-```
+```yaml
 $ docker run --privileged=True -v `pwd`:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
 [root@54d0d51e2ac9 vector-role]# tox
 py37-ansible210 installed: ansible==2.10.7,ansible-base==2.10.17,ansible-compat==1.0.0,ansible-lint==5.1.3,arrow==1.2.3,bcrypt==4.0.1,binaryornot==0.4.4,bracex==2.3.post1,cached-property==1.5.2,Cerberus==1.3.2,certifi==2023.7.22,cffi==1.15.1,chardet==5.1.0,charset-normalizer==3.2.0,click==8.1.6,click-help-colors==0.9.1,cookiecutter==2.2.3,cryptography==41.0.2,distro==1.8.0,enrich==1.2.7,idna==3.4,importlib-metadata==6.7.0,Jinja2==3.1.2,jmespath==1.0.1,lxml==4.9.3,markdown-it-py==2.2.0,MarkupSafe==2.1.3,mdurl==0.1.2,molecule==3.4.0,molecule-podman==1.0.1,packaging==23.1,paramiko==2.12.0,pathspec==0.11.1,pluggy==0.13.1,pycparser==2.21,Pygments==2.15.1,PyNaCl==1.5.0,python-dateutil==2.8.2,python-slugify==8.0.1,PyYAML==5.4.1,requests==2.31.0,rich==13.4.2,ruamel.yaml==0.17.32,ruamel.yaml.clib==0.2.7,selinux==0.2.1,six==1.16.0,subprocess-tee==0.3.5,tenacity==8.2.2,text-unidecode==1.3,typing_extensions==4.7.1,urllib3==2.0.4,wcmatch==8.4.1,yamllint==1.26.3,zipp==3.15.0
